@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "schedule:daily"
+  ],
+  "labels": ["dependencies"],
+  "assignees": ["albinmedoc"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^images/.+/Dockerfile$"],
+      "matchStrings": [
+        "ARG BASE_IMAGE=(?<depName>[^:]+):(?<currentValue>[^\\s]+)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Auto-merge patch updates for base images",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "description": "Manual review for minor and major updates",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "major"],
+      "automerge": false
+    }
+  ]
+}
