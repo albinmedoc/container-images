@@ -1,8 +1,12 @@
 ARG BASE_IMAGE=n8nio/n8n:2.5.2
+
+FROM alpine:3.21 AS ffmpeg
+RUN apk add --no-cache ffmpeg
+
 FROM ${BASE_IMAGE}
 
-USER root
-
-RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -rf /var/lib/apt/lists/*
+COPY --from=ffmpeg /usr/bin/ffmpeg /usr/bin/ffmpeg
+COPY --from=ffmpeg /usr/bin/ffprobe /usr/bin/ffprobe
+COPY --from=ffmpeg /usr/lib/lib*.so* /usr/lib/
 
 USER node
