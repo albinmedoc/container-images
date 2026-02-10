@@ -3,6 +3,6 @@ FROM ${BASE_IMAGE}
 
 USER root
 
-RUN apk add --no-cache ffmpeg
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -rf /var/lib/apt/lists/*
 
 USER node
