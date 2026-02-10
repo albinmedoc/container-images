@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "schedule:daily"
+    "config:recommended"
   ],
   "labels": ["dependencies"],
   "assignees": ["albinmedoc"],
@@ -13,7 +12,8 @@
       "matchStrings": [
         "ARG BASE_IMAGE=(?<depName>[^:]+):(?<currentValue>[^\\s]+)"
       ],
-      "datasourceTemplate": "docker"
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
     }
   ],
   "packageRules": [
