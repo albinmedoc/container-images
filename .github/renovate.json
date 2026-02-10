@@ -8,7 +8,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^images/.+/Dockerfile$"],
+      "managerFilePatterns": ["/^images/.+/Dockerfile$/"],
       "matchStrings": [
         "ARG BASE_IMAGE=(?<depName>[^:]+):(?<currentValue>[^\\s]+)"
       ],
