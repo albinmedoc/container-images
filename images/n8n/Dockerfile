@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=n8nio/n8n:2.5.2
+ARG BASE_IMAGE=n8nio/n8n:2.6.4
 
 FROM alpine:3.21 AS ffmpeg
 RUN apk add --no-cache ffmpeg
