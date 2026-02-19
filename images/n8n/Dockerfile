@@ -10,5 +10,8 @@ COPY --from=ffmpeg /ffmpeg /usr/local/bin/ffmpeg
 COPY --from=ffmpeg /ffprobe /usr/local/bin/ffprobe
 
 USER root
-RUN npm install -g megajs@${MEGAJS_VERSION}
+WORKDIR /tmp
+RUN npm install megajs@${MEGAJS_VERSION} && \
+    cp -rn /tmp/node_modules/* /usr/local/lib/node_modules/n8n/node_modules/ || true && \
+    rm -rf /tmp/node_modules
 USER node
