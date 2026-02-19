@@ -14,6 +14,15 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^images/.+/Dockerfile$/"],
+      "matchStrings": [
+        "ARG MEGAJS_VERSION=(?<currentValue>[^\\s]+)"
+      ],
+      "depNameTemplate": "megajs",
+      "datasourceTemplate": "npm"
     }
   ],
   "packageRules": [
@@ -28,6 +37,12 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "major"],
       "automerge": false
+    },
+    {
+      "description": "Auto-merge patch updates for npm packages",
+      "matchDatasources": ["npm"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
     }
   ]
 }
