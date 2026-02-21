@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=n8nio/n8n:2.8.3
+ARG BASE_IMAGE=n8nio/n8n:2.9.1
 ARG FFMPEG_IMAGE=mwader/static-ffmpeg:7.1
 
 FROM ${FFMPEG_IMAGE} AS ffmpeg
