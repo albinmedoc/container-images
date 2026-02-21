@@ -14,15 +14,6 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["/^images/.+/Dockerfile$/"],
-      "matchStrings": [
-        "ARG MEGAJS_VERSION=(?<currentValue>[^\\s]+)"
-      ],
-      "depNameTemplate": "megajs",
-      "datasourceTemplate": "npm"
     }
   ],
   "packageRules": [
