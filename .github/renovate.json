@@ -32,6 +32,13 @@
       "matchDatasources": ["npm"],
       "matchUpdateTypes": ["patch"],
       "automerge": true
+    },
+    {
+      "description": "Auto-merge minor and patch updates for Claude Code",
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@anthropic-ai/claude-code"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
     }
   ]
 }
