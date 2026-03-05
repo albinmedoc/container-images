@@ -10,10 +10,8 @@
       "customType": "regex",
       "managerFilePatterns": ["/^images/.+/Dockerfile$/"],
       "matchStrings": [
-        "ARG BASE_IMAGE=(?<depName>[^:]+):(?<currentValue>[^\\s]+)"
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+        "#\\s*renovate:\\s*datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(?:\\s+versioning=(?<versioning>[^\\s]+))?\\nARG \\w+=(?<currentValue>[^\\s]+)"
+      ]
     }
   ],
   "packageRules": [

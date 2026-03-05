@@ -70,8 +70,8 @@ jobs:
       - name: Extract version from Dockerfile
         id: version
         run: |
-          # Extract the tag from the BASE_IMAGE ARG
-          VERSION=$(grep -oP 'ARG BASE_IMAGE=\S+:(\K[^\s]+)' images/${{ matrix.image }}/Dockerfile || echo "latest")
+          # Extract version from IMAGE_VERSION ARG
+          VERSION=$(grep -oP 'ARG IMAGE_VERSION=\K[^\s]+' images/${{ matrix.image }}/Dockerfile || echo "latest")
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "Version: $VERSION"
 

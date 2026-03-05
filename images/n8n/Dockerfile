@@ -1,5 +1,9 @@
-ARG BASE_IMAGE=n8nio/n8n:2.8.3
-ARG FFMPEG_IMAGE=mwader/static-ffmpeg:7.1
+# renovate: datasource=docker depName=n8nio/n8n versioning=docker
+ARG IMAGE_VERSION=2.8.3
+ARG BASE_IMAGE=n8nio/n8n:${IMAGE_VERSION}
+# renovate: datasource=docker depName=mwader/static-ffmpeg versioning=docker
+ARG FFMPEG_VERSION=7.1
+ARG FFMPEG_IMAGE=mwader/static-ffmpeg:${FFMPEG_VERSION}
 
 FROM ${FFMPEG_IMAGE} AS ffmpeg
 
