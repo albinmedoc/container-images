@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=caddy versioning=docker
-ARG IMAGE_VERSION=2.11.3
+ARG IMAGE_VERSION=2.11.4
 ARG BASE_IMAGE=caddy:${IMAGE_VERSION}-alpine
 ARG BUILDER_IMAGE=caddy:${IMAGE_VERSION}-builder
 
