@@ -36,3 +36,20 @@ Produces: `ghcr.io/albinmedoc/n8n:2.5.2` and `ghcr.io/albinmedoc/n8n:latest`
   - Patch updates: auto-merged
   - Minor/major updates: manual review
 - **GitHub Actions** builds on push to master (only changed images)
+
+## OpenMAIC
+
+OpenMAIC is built by a dedicated workflow from the upstream repository's own
+Dockerfile. Run `Build and Push OpenMAIC` manually, or let its weekly schedule
+check the pinned release. Configure provider credentials at runtime; do not put
+API keys in Docker build arguments or the image.
+
+```bash
+docker run --rm -p 3000:3000 \
+  -e OPENAI_API_KEY=your-key \
+  ghcr.io/albinmedoc/openmaic:1.0.0
+```
+
+The default image provides the browser-backed deployment. PostgreSQL persistence
+and MP4 rendering are optional OpenMAIC Compose services and are not bundled in
+this image. Enable them by deploying the upstream `docker-compose.yml` profiles.
