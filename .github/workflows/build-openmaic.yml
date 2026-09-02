@@ -31,7 +31,7 @@ jobs:
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
       - name: Checkout OpenMAIC
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: THU-MAIC/OpenMAIC
           ref: ${{ steps.version.outputs.version }}
