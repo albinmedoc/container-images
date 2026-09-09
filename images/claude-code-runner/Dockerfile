@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=node:24-slim
 # renovate: datasource=npm depName=@anthropic-ai/claude-code
-ARG IMAGE_VERSION=2.1.263
+ARG IMAGE_VERSION=2.1.266
 
 FROM ${BASE_IMAGE}
 
