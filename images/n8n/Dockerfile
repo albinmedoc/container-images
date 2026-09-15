@@ -1,5 +1,5 @@
 # renovate: datasource=docker depName=n8nio/n8n versioning=docker
-ARG IMAGE_VERSION=2.38.4
+ARG IMAGE_VERSION=2.40.0
 ARG BASE_IMAGE=n8nio/n8n:${IMAGE_VERSION}
 # renovate: datasource=docker depName=mwader/static-ffmpeg versioning=docker
 ARG FFMPEG_VERSION=9.0
